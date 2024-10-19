@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "16529912299",
+    "firebase_url": "https://tutoria-aa1b6-default-rtdb.firebaseio.com",
+    "project_id": "tutoria-aa1b6",
+    "storage_bucket": "tutoria-aa1b6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:16529912299:android:40f3f8f24c344e8e69a9ae",
+        "android_client_info": {
+          "package_name": "com.example.kotlinlearn"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_32MjNshAJSlNV-gzw58-SDNJ3pE1da4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:16529912299:android:36d8b08219b5b10069a9ae",
+        "android_client_info": {
+          "package_name": "com.example.tutoria"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_32MjNshAJSlNV-gzw58-SDNJ3pE1da4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:16529912299:android:8055667f5568824a69a9ae",
+        "android_client_info": {
+          "package_name": "com.mobile.tutoria"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_32MjNshAJSlNV-gzw58-SDNJ3pE1da4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
