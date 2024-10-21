@@ -85,6 +85,8 @@ dependencies {
     implementation(libs.androidx.navigation.runtime)
     implementation(libs.glide)
     implementation(libs.circleimageview)
+    implementation("androidx.navigation:navigation-fragment-ktx:2.8.3")
+    implementation("androidx.navigation:navigation-ui-ktx:2.8.3")
     implementation("com.github.leandroborgesferreira:loading-button-android:2.3.0")
     implementation ("it.xabaras.android:viewpagerindicator:2.0")
     implementation("com.github.shuhart:stepview:1.5.1")
