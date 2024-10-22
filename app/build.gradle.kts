@@ -85,6 +85,7 @@ dependencies {
     implementation(libs.androidx.navigation.runtime)
     implementation(libs.glide)
     implementation(libs.circleimageview)
+    implementation ("com.airbnb.android:lottie:5.0.3")
     implementation("androidx.navigation:navigation-fragment-ktx:2.8.3")
     implementation("androidx.navigation:navigation-ui-ktx:2.8.3")
     implementation("com.github.leandroborgesferreira:loading-button-android:2.3.0")
