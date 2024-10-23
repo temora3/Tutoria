@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.example.tutoria" />
+                  <option name="mobileSdkAppId" value="1:16529912299:android:36d8b08219b5b10069a9ae" />
+                  <option name="projectId" value="tutoria-aa1b6" />
+                  <option name="projectNumber" value="16529912299" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

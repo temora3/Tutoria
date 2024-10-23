@@ -29,6 +29,10 @@ navigationRuntime = "2.8.3"
 stepview = "1.5.1"
 viewpagerindicator = "1.0.0"
 viewpagerindicatorVersion = "1.0.0-alpha.1"
+appcompat = "1.7.0"
+material = "1.12.0"
+activity = "1.9.3"
+constraintlayout = "2.1.4"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -67,6 +71,10 @@ loadingbuttonandroid = { module = "com.github.leandroBorgesFerreira:LoadingButto
 stepview = { module = "com.shuhart.stepview:stepview", version.ref = "stepview" }
 viewpagerindicator = { module = "io.github.vejei.viewpagerindicator:viewpagerindicator", version.ref = "viewpagerindicator" }
 viewpagerindicator-v100alpha1 = { module = "io.github.vejei.viewpagerindicator:viewpagerindicator", version.ref = "viewpagerindicatorVersion" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
