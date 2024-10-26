@@ -20,6 +20,7 @@ activityCompose = "1.9.3"
 composeBom = "2024.10.00"
 loadingButtonAndroid = "2.3.0"
 loadingbuttonandroidVersion = "2.3.0"
+lottie = "5.0.3"
 navigationFragment = "2.8.3"
 navigationSafeArgsGradlePlugin = "2.8.3"
 navigationSafeArgsGradlePluginVersion = "2.8.3"
@@ -68,6 +69,8 @@ androidx-navigation-runtime = { group = "androidx.navigation", name = "navigatio
 kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlinGradlePlugin" }
 loading-button-android = { module = "br.com.simplepass:loading-button-android", version.ref = "loadingButtonAndroid" }
 loadingbuttonandroid = { module = "com.github.leandroBorgesFerreira:LoadingButtonAndroid", version.ref = "loadingbuttonandroidVersion" }
+lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie" }
+material3 = { module = "androidx.compose.material3:material3" }
 stepview = { module = "com.shuhart.stepview:stepview", version.ref = "stepview" }
 viewpagerindicator = { module = "io.github.vejei.viewpagerindicator:viewpagerindicator", version.ref = "viewpagerindicator" }
 viewpagerindicator-v100alpha1 = { module = "io.github.vejei.viewpagerindicator:viewpagerindicator", version.ref = "viewpagerindicatorVersion" }
