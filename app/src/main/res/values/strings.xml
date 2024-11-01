@@ -2,4 +2,19 @@
     <string name="app_name">Tutoria</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name ="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name ="welcome_to_tutoria">WELCOME TO TUTORIA</string>
+    <string name="create_an_account">Create an account</string>
+    <string name="select_role">Select Role:</string>
+    <string name="lecturer">Lecturer</string>
+    <string name="student">Student</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="already_an_user">Already an user? Login</string>
+    <string name="login_to_account">Login to an account</string>
+    <string name="login">Login</string>
+    <string name="not_yet_registered">Not yet registered? SignUp</string>
+
+
 </resources>
