@@ -43,8 +43,10 @@ android {
     }
     buildFeatures {
         compose = true
+        viewBinding = true
+        
     }
-    packagingOptions {
+    packaging {
         resources {
             excludes += "META-INF/gradle/incremental.annotation.processors"
         }
