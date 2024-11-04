@@ -91,7 +91,7 @@ fun MainScreen(supportFragmentManager: FragmentManager) {
             Box {
                 NavigationBar(
                     modifier = Modifier.fillMaxWidth(),
-                    containerColor = Color.Transparent
+                    containerColor = Color.hsl(180.79F, 0.5588F, 0.7333F)
                 ) {
                     compositions.forEachIndexed { index, composition ->
                         NavigationBarItem(

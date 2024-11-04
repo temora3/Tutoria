@@ -7,7 +7,7 @@
       </SelectionState>
       <SelectionState runConfigName="TutoringActivity">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2024-10-26T08:23:24.994345Z">
+        <DropdownSelection timestamp="2024-10-28T05:55:21.699599Z">
           <Target type="DEFAULT_BOOT">
             <handle>
               <DeviceId pluginId="PhysicalDevice" identifier="serial=RZ8T50ASDXH" />
