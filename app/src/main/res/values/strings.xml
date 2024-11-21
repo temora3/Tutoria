@@ -21,6 +21,17 @@
     <string name="reset">Reset</string>
     <string name="cancel">Cancel</string>
     <string name="chats">Chats</string>
+    <string name="contact_name">Contact Name</string>
+    <string name="last_message">Last message</string>
+    <string name="time_recent_chat">12:45 PM</string>
+    <string name="tutoria">Tutoria</string>
+   <string name="tutoria_chat">Tutoria Chat</string>
+    <string name="type_a_message">Type a message</string>
+    <string name="send">send</string>
+    <string name="the_layout">The layout</string>
+    <string name="back_button">back button</string>
+    <string name="profile_image">Profile image</string>
+    <string name="more_options">More options</string>
 
 
 </resources>

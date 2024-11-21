@@ -1,29 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/chatFragment"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/blury_background">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <!-- Toolbar or Header Section -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerSection"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp">
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="8dp">
 
+        <!-- Back Button -->
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:contentDescription="@string/back_button"
+            android:src="@drawable/baseline_arrow_back_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="8dp" />
+
+        <!-- Profile Image -->
+        <ImageView
+            android:id="@+id/profileImage"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/baseline_person_24"
+            android:contentDescription="@string/profile_image"
+            app:layout_constraintStart_toEndOf="@id/backButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="12dp"
+            android:scaleType="centerCrop"
+            android:background="@drawable/circular_border" />
+
+        <!-- User Name -->
         <TextView
-            android:id="@+id/chatTitle"
-            android:layout_width="match_parent"
+            android:id="@+id/userName"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/chats"
-            android:textSize="24sp"
-            android:textAlignment="center"
+            android:text="@string/contact_name"
+            android:textSize="18sp"
+            android:textColor="@color/g_blue"
             android:fontFamily="@font/opensans_semibold"
-            android:layout_marginBottom="8dp"/>
+            app:layout_constraintStart_toEndOf="@id/profileImage"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/moreOptions"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingEnd="8dp" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recentChatsRecyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+        <!-- More Options Button -->
+        <ImageView
+            android:id="@+id/moreOptions"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:contentDescription="@string/more_options"
+            android:src="@drawable/baseline_more_vert_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="8dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Messages RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/messagesRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/headerSection"
+        android:layout_above="@id/messageInputLayout"
+        android:padding="8dp" />
+
+    <!-- Message Input and Send Button -->
+    <LinearLayout
+        android:id="@+id/messageInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <!-- Input field for typing a message -->
+        <EditText
+            android:id="@+id/messageEdit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_edittext_background"
+            android:hint="@string/type_a_message"
+            android:inputType="textMultiLine"
+            android:maxLines="4"
+            android:minHeight="48dp" />
+
+        <!-- Send Button -->
+        <ImageButton
+            android:id="@+id/sendButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/send"
+            android:src="@drawable/baseline_send_24"
+            tools:ignore="TouchTargetSizeCheck" />
     </LinearLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
