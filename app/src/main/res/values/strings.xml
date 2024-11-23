@@ -32,6 +32,23 @@
     <string name="back_button">back button</string>
     <string name="profile_image">Profile image</string>
     <string name="more_options">More options</string>
-
-
+    <string name="otp_verification">OTP Verification</string>
+    <string name="we_will_send_you_an_otp">Verify your account using the password sent</string>
+    <string name="on_this_mobile_number">on your email</string>
+    <string name="otp">Enter your OTP</string>
+    <string name="profile_information">Profile Information</string>
+    <string name="please_setup_profile">Please setup your profile</string>
+<string name="first_name">Fist Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="date_of_birth">Date of Birth (YYYY-MM-DD)</string>
+    <string name="email_address">Email Address</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="education_level">Education Level</string>
+    <string name="subjects_of_interest">Subjects of Interest</string>
+    <string name="learning_goals">Learning Goals</string>
+    <string name="qualifications">Qualifications</string>
+    <string name="subjects_taught">Subjects Taught</string>
+    <string name="hourly_rate">Hourly Rate</string>
+    <string name="biography">Biography</string>
+    <string name="save_profile">Save Profile</string>
 </resources>

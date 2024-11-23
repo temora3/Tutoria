@@ -2,7 +2,6 @@ package com.example.tutoria
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.RadioButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -27,14 +26,6 @@ class SignupActivity : AppCompatActivity() {
             val password = binding.signupPassword.text.toString()
             val confirmPassword = binding.signupConfirm.text.toString()
 
-            // Check if a role is selected
-            val selectedRoleId = binding.roleRadioGroup.checkedRadioButtonId
-            if (selectedRoleId == -1) {
-                Toast.makeText(this, "Please select a role", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
-            val selectedRole = findViewById<RadioButton>(selectedRoleId).text.toString()
-
             // Validate form fields
             if (email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty()) {
                 if (password == confirmPassword) {
@@ -43,7 +34,6 @@ class SignupActivity : AppCompatActivity() {
                             if (it.isSuccessful) {
                                 // Navigate to LoginActivity
                                 val intent = Intent(this, LoginActivity::class.java)
-                                intent.putExtra("ROLE", selectedRole)
                                 startActivity(intent)
                             } else {
                                 Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()

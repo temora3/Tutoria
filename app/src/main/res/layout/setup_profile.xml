@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@drawable/blury_background"
+    tools:context=".activities.setUpProfileActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:gravity="center_horizontal">
+
+        <!-- Profile Header -->
+        <ImageView
+            android:layout_marginTop="32dp"
+            android:src="@drawable/baseline_person_24"
+            android:layout_width="150dp"
+            android:layout_height="150dp" />
+
+        <TextView
+            android:text="@string/profile_information"
+            android:textAlignment="center"
+            android:layout_marginTop="16dp"
+            android:textSize="24sp"
+            android:fontFamily="@font/opensansbold"
+            android:textColor="@color/g_dark_blue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Role Selection -->
+        <TextView
+            android:text="@string/select_role"
+            android:layout_marginTop="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/opensansbold"
+            android:textColor="@color/g_dark_blue"
+            android:textSize="16sp" />
+
+        <Spinner
+            android:id="@+id/spinnerRole"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:entries="@array/roles_array"
+            android:fontFamily="@font/opensans"
+            android:minHeight="48dp"
+            android:textColor="@color/black" />
+
+        <!-- General Information -->
+        <EditText
+            android:id="@+id/editTextFirstName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/form_borderline"
+            android:fontFamily="@font/opensans"
+            android:hint="@string/first_name"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:padding="8dp"
+            android:textColor="@color/black" />
+
+        <EditText
+            android:id="@+id/editTextLastName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/form_borderline"
+            android:fontFamily="@font/opensans"
+            android:hint="@string/last_name"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:padding="8dp"
+            android:textColor="@color/black" />
+
+        <EditText
+            android:id="@+id/editTextDateOfBirth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/form_borderline"
+            android:hint="@string/date_of_birth"
+            android:inputType="date"
+            android:minHeight="48dp"
+            android:padding="8dp" />
+
+        <EditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/form_borderline"
+            android:hint="@string/email_address"
+            android:inputType="textEmailAddress"
+            android:minHeight="48dp"
+            android:padding="8dp" />
+
+        <EditText
+            android:id="@+id/editTextPhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/form_borderline"
+            android:hint="@string/phone_number"
+            android:inputType="phone"
+            android:minHeight="48dp"
+            android:padding="8dp" />
+
+        <!-- Dynamic Role-Specific Fields -->
+        <ViewSwitcher
+            android:id="@+id/roleSpecificSwitcher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
+
+            <!-- Student-Specific Fields -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/editTextEducationLevel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/form_borderline"
+                    android:hint="@string/education_level"
+                    android:inputType="text"
+                    android:minHeight="48dp"
+                    android:padding="8dp" />
+
+                <EditText
+                    android:id="@+id/editTextSubjectsOfInterest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/form_borderline"
+                    android:hint="@string/subjects_of_interest"
+                    android:inputType="text"
+                    android:minHeight="48dp"
+                    android:padding="8dp" />
+
+                <EditText
+                    android:id="@+id/editTextLearningGoals"
+                    android:hint="@string/learning_goals"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:background="@drawable/form_borderline"
+                    android:inputType="text"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+
+            <!-- Lecturer-Specific Fields -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/editTextQualifications"
+                    android:hint="@string/qualifications"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:background="@drawable/form_borderline"
+                    android:inputType="text" />
+
+                <EditText
+                    android:id="@+id/editTextSubjectsTaught"
+                    android:hint="@string/subjects_taught"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:background="@drawable/form_borderline"
+                    android:inputType="text"
+                    android:layout_marginTop="8dp" />
+
+                <EditText
+                    android:id="@+id/editTextHourlyRate"
+                    android:hint="@string/hourly_rate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:background="@drawable/form_borderline"
+                    android:inputType="numberDecimal"
+                    android:layout_marginTop="8dp" />
+
+                <EditText
+                    android:id="@+id/editTextBiography"
+                    android:hint="@string/biography"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:padding="8dp"
+                    android:background="@drawable/form_borderline"
+                    android:lines="3"
+                    android:gravity="top"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+        </ViewSwitcher>
+
+        <!-- Save Button -->
+        <Button
+            android:id="@+id/buttonSaveProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/g_dark_blue"
+            android:text="@string/save_profile"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            app:cornerRadius = "30dp"/>
+
+    </LinearLayout>
+</ScrollView>
