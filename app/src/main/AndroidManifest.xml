@@ -28,6 +28,15 @@
             android:name=".activities.TutoringActivity"
             android:exported="true"
             android:theme="@style/Theme.Tutoria" />
+
+        <activity
+            android:name=".LecturerSetUpProfileActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Tutoria" />
+        <activity
+            android:name=".StudentSetUpProfileActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Tutoria" />
         <activity
             android:name=".MainActivity"
             android:exported="false"

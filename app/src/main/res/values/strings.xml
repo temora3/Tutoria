@@ -51,4 +51,10 @@
     <string name="hourly_rate">Hourly Rate</string>
     <string name="biography">Biography</string>
     <string name="save_profile">Save Profile</string>
+    <string name="name">Name</string>
+    <string name="account_settings">Account Settings</string>
+    <string name="my_review">my review</string>
+    <string name="my_reviews">My Reviews</string>
+    <string name="personal_information">Personal Information</string>
+    <string name="notification">Notification</string>
 </resources>
