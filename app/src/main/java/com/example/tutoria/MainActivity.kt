@@ -1,42 +1,42 @@
 package com.example.tutoria
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.tutoria.activities.TutoringActivity
 import com.example.tutoria.ui.theme.TutoriaTheme
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.analytics.FirebaseAnalytics
 
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+
+        // Initialize Firebase
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true) // Enable offline persistence for Firebase Database
+        FirebaseAnalytics.getInstance(this) // Initialize Firebase Analytics
+
+        // Set the content of the activity
         setContent {
             TutoriaTheme {
-                Surface {
-                    Modifier.fillMaxSize()
-                    MaterialTheme.colorScheme.background
-                    {
-                        TutoringActivity()
-                    }
-                }
+                MainScreen()
+            }
+        }
+    }
+
+    @Composable
+    fun MainScreen() {
+        // Main screen content goes here
+        Surface {
+            Button(onClick = {
+                // Navigate to AdminActivity when the button is clicked
+                startActivity(Intent(this@MainActivity, AdminActivity::class.java))
+            }) {
+                Text("Go to Admin Panel")
             }
         }
     }
 }
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    TutoriaTheme{TutoringActivity()}
-}
-

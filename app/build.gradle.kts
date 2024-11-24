@@ -1,5 +1,3 @@
-import com.android.tools.r8.internal.br
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -7,7 +5,7 @@ plugins {
     id("androidx.navigation.safeargs.kotlin")
     id("dagger.hilt.android.plugin")
     id("kotlin-parcelize")
-    alias(libs.plugins.google.gms.google.services)
+    id("com.google.gms.google-services") // Correct way to apply the google-services plugin
 }
 
 android {
@@ -38,40 +36,46 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
     buildFeatures {
         compose = true
         viewBinding = true
-        
     }
+
     packaging {
         resources {
             excludes += "META-INF/gradle/incremental.annotation.processors"
         }
     }
 }
+
 buildscript {
     repositories {
         google()
         mavenCentral()
     }
-    buildscript {
-        repositories {
-            google()
-            mavenCentral()
-            maven { url = uri("https://jitpack.io") }
-        }
-        dependencies {
-            classpath(libs.gradle)
-            classpath(libs.kotlin.gradle.plugin)
-            classpath(libs.androidx.navigation.safe.args.gradle.plugin)
-            classpath(libs.hilt.android.gradle.plugin)
-        }
+    dependencies {
+        classpath(libs.gradle)
+        classpath(libs.kotlin.gradle.plugin)
+        classpath(libs.androidx.navigation.safe.args.gradle.plugin)
+        classpath(libs.hilt.android.gradle.plugin)
     }
 }
+
 dependencies {
+    // Firebase dependencies
+    implementation("com.google.firebase:firebase-analytics:21.0.0") // Firebase Analytics
+    implementation("com.google.firebase:firebase-database:20.3.0") // Firebase Realtime Database
+    implementation("com.google.firebase:firebase-auth:22.3.1") // Firebase Authentication
+    implementation("com.google.firebase:firebase-storage:20.3.0") // Firebase Storage
+
+    // MPAndroidChart for chart visualization // Chart library
+
+    // Hilt & other dependencies
     implementation(libs.hilt.android.v248)
     implementation(libs.androidx.hilt.lifecycle.viewmodel)
     implementation(libs.androidx.core.ktx)
@@ -88,22 +92,26 @@ dependencies {
     implementation(libs.androidx.navigation.runtime)
     implementation(libs.glide)
     implementation(libs.circleimageview)
-    implementation (libs.material3)
-    implementation (libs.lottie)
-    implementation ("com.airbnb.android:lottie-compose:6.5.2")
+    implementation(libs.lottie)
+    implementation("com.airbnb.android:lottie-compose:6.5.2")
     implementation("androidx.navigation:navigation-fragment-ktx:2.8.3")
     implementation("androidx.navigation:navigation-ui-ktx:2.8.3")
     implementation("com.github.leandroborgesferreira:loading-button-android:2.3.0")
-    implementation ("it.xabaras.android:viewpagerindicator:2.0")
+    implementation("it.xabaras.android:viewpagerindicator:2.0")
     implementation("com.github.shuhart:stepview:1.5.1")
+    implementation("com.google.android.material:material:1.5.0")
+    implementation("androidx.compose.ui:ui:1.4.0")
+    implementation("androidx.compose.material3:material3:1.0.0")
+    implementation("androidx.compose.foundation:foundation:1.4.0")
+    implementation("androidx.compose.runtime:runtime:1.4.0")
+
     implementation(libs.hilt.android.compiler)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation(libs.firebase.analytics)
-    implementation(libs.firebase.database)
-    implementation(libs.firebase.auth)
+
+    // Testing dependencies
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -112,3 +120,7 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 }
+
+// Remove this line
+// apply plugin: 'com.google.gms.google-services' // Remove it
+

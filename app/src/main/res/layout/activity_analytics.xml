@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Header Title -->
+    <TextView
+        android:id="@+id/headerTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Analytics"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Active Users Display -->
+    <TextView
+        android:id="@+id/activeUsersTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Active Users: 0"
+        android:textSize="18sp"
+        android:layout_below="@id/headerTitle"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true" />
+
+    <!-- Placeholder for Other Analytics -->
+    <TextView
+        android:id="@+id/otherMetricsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="More metrics coming soon..."
+        android:textSize="16sp"
+        android:layout_below="@id/activeUsersTextView"
+        android:layout_marginTop="32dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#808080" />
+
+</RelativeLayout>
