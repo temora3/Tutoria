@@ -18,7 +18,7 @@
 
         <!-- MainActivity is now the entry point -->
         <activity
-            android:name=".MainActivity"
+            android:name=".MainAdminActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Tutoria">
