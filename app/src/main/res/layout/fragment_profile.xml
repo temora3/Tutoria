@@ -1,6 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activities.SetupProfile"
+    android:background="@drawable/blury_background">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="247dp">
+
+                <ImageView
+                    android:id="@+id/profile_image_icon"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="9dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/profile_image"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensansbold"
+                    android:text="@string/name"
+                    android:textSize="25sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/profile_image_icon"
+                    android:textColor="@color/g_blue"
+                    app:layout_constraintVertical_bias="0.23000002" />
+
+                <TextView
+                    android:id="@+id/profile_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/email"
+                    android:fontFamily="@font/opensans_bolditalic"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/name"
+                    android:textColor="@color/g_blue"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@id/profile_email"
+                    tools:layout_editor_absoluteX="56dp">
+
+
+                </LinearLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/my_reviews"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="@string/my_reviews"
+                android:layout_marginStart="32dp"
+                android:textAlignment="viewStart"
+                android:layout_marginEnd="32dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:drawablePadding="20dp"
+                android:paddingStart="20dp"
+                android:fontFamily="@font/opensansbold"
+                android:textSize="20sp"
+                android:background="@drawable/form_borderline"
+                android:drawableStart="@drawable/baseline_reviews_24"
+                style="@android:style/Widget.Button"
+                tools:ignore="RtlSymmetry" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/account_setting"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="@string/account_settings"
+                android:layout_marginStart="32dp"
+                android:textAlignment="viewStart"
+                android:layout_marginEnd="32dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:drawablePadding="20dp"
+                android:paddingStart="20dp"
+                style="@android:style/Widget.Button"
+                android:fontFamily="@font/opensansbold"
+                android:textSize="20sp"
+                android:background="@drawable/form_borderline"
+                android:drawableStart="@drawable/baseline_settings_24"
+                tools:ignore="RtlSymmetry" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/personal_information"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="@string/personal_information"
+                android:layout_marginStart="32dp"
+                android:textAlignment="viewStart"
+                android:layout_marginEnd="32dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:drawablePadding="20dp"
+                android:paddingStart="20dp"
+                android:fontFamily="@font/opensansbold"
+                style="@android:style/Widget.Button"
+                android:textSize="20sp"
+                android:background="@drawable/form_borderline"
+                android:drawableStart="@drawable/baseline_person_24"
+                tools:ignore="RtlSymmetry" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/notification"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="@string/notification"
+                android:layout_marginStart="32dp"
+                android:textAlignment="viewStart"
+                android:layout_marginEnd="32dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:drawablePadding="20dp"
+                android:paddingStart="20dp"
+                style="@android:style/Widget.Button"
+                android:fontFamily="@font/opensansbold"
+                android:textSize="20sp"
+                android:background="@drawable/form_borderline"
+                android:drawableStart="@drawable/baseline_notifications_24"
+                tools:ignore="RtlSymmetry" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
