@@ -10,7 +10,7 @@ import com.example.tutoria.ui.theme.TutoriaTheme
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.analytics.FirebaseAnalytics
 
-class MainActivity : ComponentActivity() {
+class MainAdminActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +33,7 @@ class MainActivity : ComponentActivity() {
         Surface {
             Button(onClick = {
                 // Navigate to AdminActivity when the button is clicked
-                startActivity(Intent(this@MainActivity, AdminActivity::class.java))
+                startActivity(Intent(this@MainAdminActivity, AdminActivity::class.java))
             }) {
                 Text("Go to Admin Panel")
             }
