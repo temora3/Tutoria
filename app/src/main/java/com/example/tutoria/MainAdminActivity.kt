@@ -1,27 +1,33 @@
 package com.example.tutoria
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.material3.*
+import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+import com.example.tutoria.activities.TutoringActivity
 import com.example.tutoria.ui.theme.TutoriaTheme
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.analytics.FirebaseAnalytics
 
+<<<<<<< HEAD:app/src/main/java/com/example/tutoria/MainAdminActivity.kt
 class MainAdminActivity : ComponentActivity() {
 
+=======
+class MainActivity : ComponentActivity() {
+>>>>>>> de399db00d0973142c70c3f2c6a4a2aad2d48774:app/src/main/java/com/example/tutoria/MainActivity.kt
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        // Initialize Firebase
-        FirebaseDatabase.getInstance().setPersistenceEnabled(true) // Enable offline persistence for Firebase Database
-        FirebaseAnalytics.getInstance(this) // Initialize Firebase Analytics
-
-        // Set the content of the activity
+        enableEdgeToEdge()
         setContent {
             TutoriaTheme {
+<<<<<<< HEAD:app/src/main/java/com/example/tutoria/MainAdminActivity.kt
                 MainScreen()
             }
         }
@@ -36,7 +42,23 @@ class MainAdminActivity : ComponentActivity() {
                 startActivity(Intent(this@MainAdminActivity, AdminActivity::class.java))
             }) {
                 Text("Go to Admin Panel")
+=======
+                Surface {
+                    Modifier.fillMaxSize()
+                    MaterialTheme.colorScheme.background
+                    {
+                        TutoringActivity()
+                    }
+                }
+>>>>>>> de399db00d0973142c70c3f2c6a4a2aad2d48774:app/src/main/java/com/example/tutoria/MainActivity.kt
             }
         }
     }
 }
+
+@Preview(showBackground = true)
+@Composable
+fun DefaultPreview() {
+    TutoriaTheme{TutoringActivity()}
+}
+
