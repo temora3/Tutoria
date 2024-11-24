@@ -16,12 +16,33 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.tutoria.activities.TutoringActivity
 import com.example.tutoria.ui.theme.TutoriaTheme
 
+<<<<<<< HEAD:app/src/main/java/com/example/tutoria/MainAdminActivity.kt
+class MainAdminActivity : ComponentActivity() {
+
+=======
 class MainActivity : ComponentActivity() {
+>>>>>>> de399db00d0973142c70c3f2c6a4a2aad2d48774:app/src/main/java/com/example/tutoria/MainActivity.kt
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             TutoriaTheme {
+<<<<<<< HEAD:app/src/main/java/com/example/tutoria/MainAdminActivity.kt
+                MainScreen()
+            }
+        }
+    }
+
+    @Composable
+    fun MainScreen() {
+        // Main screen content goes here
+        Surface {
+            Button(onClick = {
+                // Navigate to AdminActivity when the button is clicked
+                startActivity(Intent(this@MainAdminActivity, AdminActivity::class.java))
+            }) {
+                Text("Go to Admin Panel")
+=======
                 Surface {
                     Modifier.fillMaxSize()
                     MaterialTheme.colorScheme.background
@@ -29,6 +50,7 @@ class MainActivity : ComponentActivity() {
                         TutoringActivity()
                     }
                 }
+>>>>>>> de399db00d0973142c70c3f2c6a4a2aad2d48774:app/src/main/java/com/example/tutoria/MainActivity.kt
             }
         }
     }
