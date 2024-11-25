@@ -23,6 +23,7 @@ import com.example.tutoria.fragments.tutoring.ChatFragment
 import com.example.tutoria.fragments.tutoring.HomeFragment
 import com.example.tutoria.fragments.tutoring.ProfileFragment
 import com.example.tutoria.fragments.tutoring.SearchFragment
+import com.example.tutoria.fragments.tutoring.UserAccountFragment
 
 class TutoringActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,7 +36,7 @@ class TutoringActivity : AppCompatActivity() {
 
 @Composable
 fun MainScreen(supportFragmentManager: FragmentManager) {
-    var selectedItem by remember { mutableStateOf(0) }
+    var selectedItem by remember { mutableIntStateOf(0) }
 
     // Load Lottie animations for each icon
     val compositions = listOf(
@@ -73,7 +74,7 @@ fun MainScreen(supportFragmentManager: FragmentManager) {
             0 -> HomeFragment()
             1 -> SearchFragment()
             2 -> ChatFragment()
-            3 -> ProfileFragment()
+            3 -> UserAccountFragment()
             else -> HomeFragment()
         }
         supportFragmentManager.beginTransaction()
@@ -88,51 +89,48 @@ fun MainScreen(supportFragmentManager: FragmentManager) {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         bottomBar = {
-            Box {
-                NavigationBar(
-                    modifier = Modifier.fillMaxWidth(),
-                    containerColor = Color.hsl(180.79F, 0.5588F, 0.7333F)
-                ) {
-                    compositions.forEachIndexed { index, composition ->
-                        NavigationBarItem(
-                            selected = selectedItem == index,
-                            onClick = { selectedItem = index },
-                            icon = {
-                                Box(modifier = Modifier.size(24.dp)) {
-                                    if (selectedItem == index && composition.value != null) {
-                                        LottieAnimation(
-                                            composition = composition.value,
-                                            progress = { progressStates[index].value }
-                                        )
-                                    } else {
-                                        Icon(
-                                            painter = painterResource(id = staticIcons[index]),
-                                            contentDescription = titles[index]
-                                        )
-                                    }
-                                }
-                            },
-                            label = {
-                                Text(
-                                    titles[index],
-                                    style = TextStyle(
-                                        fontFamily = customFontFamily,
-                                        fontSize = 12.sp,
-                                        fontWeight = FontWeight.Normal,
-                                        color = Color.Black
+            NavigationBar(
+                modifier = Modifier.fillMaxWidth(),
+            ) {
+                compositions.forEachIndexed { index, composition ->
+                    NavigationBarItem(
+                        selected = selectedItem == index,
+                        onClick = { selectedItem = index },
+                        icon = {
+                            Box(modifier = Modifier.size(24.dp)) {
+                                if (selectedItem == index && composition.value != null) {
+                                    LottieAnimation(
+                                        composition = composition.value,
+                                        progress = { progressStates[index].value }
                                     )
-                                )
+                                } else {
+                                    Icon(
+                                        painter = painterResource(id = staticIcons[index]),
+                                        contentDescription = titles[index]
+                                    )
+                                }
                             }
-                        )
-                    }
+                        },
+                        label = {
+                            Text(
+                                titles[index],
+                                style = TextStyle(
+                                    fontFamily = customFontFamily,
+                                    fontSize = 12.sp,
+                                    fontWeight = FontWeight.Normal,
+                                    color = Color.Black
+                                )
+                            )
+                        }
+                    )
                 }
             }
         }
-    ) { paddingValues ->
+    ) { paddingValues -> // Use the content padding values
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(paddingValues)
+                .padding(paddingValues) // Apply padding here to avoid overlapping with the bottom bar
         ) {
             // Placeholder for the fragment container
             androidx.compose.ui.viewinterop.AndroidView(

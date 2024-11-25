@@ -14,6 +14,9 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.tutoria.activities.TutoringActivity
 import com.example.tutoria.databinding.ActivityLoginBinding
+import com.example.tutoria.util.RegisterValidation
+import com.example.tutoria.util.ValidateEmail
+import com.example.tutoria.util.ValidatePassword
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
@@ -33,6 +36,8 @@ class LoginActivity : AppCompatActivity() {
         binding.loginButton.setOnClickListener {
             val email = binding.loginEmail.text.toString()
             val password = binding.loginPassword.text.toString()
+            val emailValidation = ValidateEmail(email)
+            val passwordValidation = ValidatePassword(password)
 
             if (email.isNotEmpty() && password.isNotEmpty()) {
                 firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {

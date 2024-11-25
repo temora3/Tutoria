@@ -3,7 +3,7 @@
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>d
+    <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
@@ -27,5 +27,12 @@
     <color name="tutoriaBeige">#FED9B7</color>
     <color name="tutoriaRed">#F07167</color>
     <color name="tutoriaRedVariant">#FF2058</color>
+
+    <color name="g_hint">#666666</color>
+    <color name="g_icon_tint">#97AABD</color>
+    <color name="g_pink">#FF9999</color>
+    <color name="g_circle_shadow">#B8D9FA</color>
+    <color name="g_text_hint">#969899</color>
+    <color name="g_orange">#F8BA00</color>
 </resources>
 

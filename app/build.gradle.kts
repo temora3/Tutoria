@@ -1,23 +1,22 @@
-import com.android.tools.r8.internal.br
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     id("androidx.navigation.safeargs.kotlin")
-    id("dagger.hilt.android.plugin")
+    id("com.google.dagger.hilt.android")
     id("kotlin-parcelize")
+    id("kotlin-kapt")
     alias(libs.plugins.google.gms.google.services)
 }
 
 android {
     namespace = "com.example.tutoria"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.tutoria"
         minSdk = 29
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -38,41 +37,44 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-    kotlinOptions {
-        jvmTarget = "1.8"
+
+    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+        kotlinOptions {
+            jvmTarget = "1.8"
+        }
     }
+
     buildFeatures {
         compose = true
         viewBinding = true
-        
     }
+
     packaging {
         resources {
             excludes += "META-INF/gradle/incremental.annotation.processors"
         }
     }
 }
+
 buildscript {
     repositories {
         google()
         mavenCentral()
+        maven { url = uri("https://jitpack.io") }
     }
-    buildscript {
-        repositories {
-            google()
-            mavenCentral()
-            maven { url = uri("https://jitpack.io") }
-        }
-        dependencies {
-            classpath(libs.gradle)
-            classpath(libs.kotlin.gradle.plugin)
-            classpath(libs.androidx.navigation.safe.args.gradle.plugin)
-            classpath(libs.hilt.android.gradle.plugin)
-        }
+
+    dependencies {
+        classpath(libs.gradle)
+        classpath(libs.kotlin.gradle.plugin)
+        classpath(libs.androidx.navigation.safe.args.gradle.plugin)
+        classpath(libs.hilt.android.gradle.plugin)
     }
 }
+
 dependencies {
-    implementation(libs.hilt.android.v248)
+    implementation(libs.hilt.navigation.fragment)
+    implementation(libs.hilt.android)
+    implementation(libs.hilt.android.compiler)
     implementation(libs.androidx.hilt.lifecycle.viewmodel)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -88,15 +90,15 @@ dependencies {
     implementation(libs.androidx.navigation.runtime)
     implementation(libs.glide)
     implementation(libs.circleimageview)
-    implementation (libs.material3)
-    implementation (libs.lottie)
-    implementation ("com.airbnb.android:lottie-compose:6.5.2")
-    implementation("androidx.navigation:navigation-fragment-ktx:2.8.3")
-    implementation("androidx.navigation:navigation-ui-ktx:2.8.3")
-    implementation("com.github.leandroborgesferreira:loading-button-android:2.3.0")
-    implementation ("it.xabaras.android:viewpagerindicator:2.0")
+    implementation(libs.material3)
+    implementation(libs.lottie)
+    implementation(libs.lottie.compose)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+    implementation("it.xabaras.android:viewpagerindicator:2.0")
     implementation("com.github.shuhart:stepview:1.5.1")
-    implementation(libs.hilt.android.compiler)
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
+    implementation("com.github.leandroborgesferreira:loading-button-android:2.3.0")
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
@@ -104,6 +106,11 @@ dependencies {
     implementation(libs.firebase.analytics)
     implementation(libs.firebase.database)
     implementation(libs.firebase.auth)
+    implementation(libs.firebase.firestore.ktx)
+    implementation(libs.firebase.storage.ktx)
+    implementation(libs.androidx.runtime.saved.instance.state)
+    implementation(libs.firebase.firestore)
+    implementation(libs.firebase.storage)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -112,3 +119,4 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 }
+
